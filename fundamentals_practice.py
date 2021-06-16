@@ -17,7 +17,6 @@ x = 50
 To_my_first_name = "Eric"
 
 print(type(name))
-print(type(age))
 print(type(salary))
 print(type(plays_basketball))
 print(type(jersey_number))
