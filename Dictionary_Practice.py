@@ -63,8 +63,66 @@ print(shoe_inventory)
 
 # Function Practice
 # Step 2
-def total_price(*arg):
-    total_sum = product_costs[food1] + product_costs[food2]
-    result_string = "The total price of " + food1 + " and " + food2 + " is " + total_sum
-    return result_string
-print(total_price("beef", "cheese"))
+def total_price(*argv):
+    grocery_list = []
+    total_sum = 0
+    written_grocery_list = ""
+    for arg in argv:
+        if arg in product_costs:
+            grocery_list.append(arg)
+            total_sum += product_costs[arg]
+    for item in grocery_list:
+        if item == grocery_list[-1]:
+            written_grocery_list += " and " + item
+        elif len(grocery_list) == 2:
+            written_grocery_list += " " + item
+        else:
+            written_grocery_list += " " + item + ","
+    final_statement = "The total price of" + written_grocery_list + " is " + str(total_sum)
+    return final_statement
+#print(total_price("beef", "cheese", "water", "chicken"))
+
+# Step 3
+def price_difference(food1, food2):
+    total_difference = 0
+    if food1 in product_costs and food2 in product_costs:
+        if product_costs[food1] > product_costs[food2]:
+            total_difference = product_costs[food1] - product_costs[food2]
+        else:
+            total_difference = product_costs[food2] - product_costs[food1]
+        return("The difference between " + food1 + " and " + food2 + " is " + str(total_difference))
+    else:
+        return("The difference between " + food1 + " and " + food2 + " is 0 because one of the items are not in store.")
+#price_difference("beef", "cheese")
+
+def price_sum_and_difference(*argv):
+    print(total_price(*argv))
+    print(price_difference(argv[0],argv[1]))
+price_sum_and_difference("beef", "cheese")
+
+# Step 4
+def restock(selected, multiplier):
+    if selected in shoe_inventory:
+        shoe_inventory[selected] *= multiplier
+    elif selected == "all":
+        for key in  shoe_inventory:
+            shoe_inventory[key] *= multiplier
+    return shoe_inventory
+print(restock("all", 2))
+
+# Step 5
+
+def clearance_sale(selected, divisor):
+    if selected in shoe_inventory:
+        shoe_inventory[selected] /= divisor
+    elif selected == "all":
+        for key in  shoe_inventory:
+            shoe_inventory[key] /= divisor
+    return shoe_inventory
+
+def restock_or_clearance(operation, selected, scale):
+    if operation == "multiply" or operation == "*":
+        restock(selected, scale)
+    else if operation == "divide" or operation == "/":
+        clearance_sale(selected, scale)
+
