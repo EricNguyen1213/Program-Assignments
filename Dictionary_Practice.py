@@ -1,5 +1,5 @@
 # Step 1 & 2
-product_costs = {"chicken":"$1.59","beef":"$1.99","cheese":"$1.00","milk":"$2.50"}
+product_costs = {"chicken":1.59,"beef":1.99,"cheese":1.00,"milk":2.50}
 
 # Step 3
 my_favorite = {"subject": "CS","color": "purple", "number": 7, "hobby": "sleeping"}
@@ -44,7 +44,7 @@ shoe_inventory["Air Max"] -= 3
 shoe_inventory["SB Dunk"] -= 3
 
 # Step 8
-product_costs = {"chicken":"$1.59", "beef":"$1.99", "cheese":"$1.00", "milk":"$2.50", "pork":"$2.75", "egg":"$0.75", "fish":"$3.00"}
+product_costs = {"chicken":1.59, "beef":1.99, "cheese":1.00, "milk":2.50, "pork":2.75, "egg":0.75, "fish":3.00}
 my_favorite = {"subject":"CS", "color":"purple", "number":7, "hobby":"sleeping", "book":"Story Thieves", "movie":"A Silent Voice", "food":"sushi"}
 shoe_inventory = {"Jordan 13": 1, "Yeezy": 8, "Foamposite": 10, "Air Max": 5, "SB Dunk":20, "Under Armour": 7, "Nike": 12, "Sketchers": 22}
 
@@ -60,3 +60,11 @@ print(my_favorite)
 del shoe_inventory["Foamposite"]
 del shoe_inventory["Nike"]
 print(shoe_inventory)
+
+# Function Practice
+# Step 2
+def total_price(*arg):
+    total_sum = product_costs[food1] + product_costs[food2]
+    result_string = "The total price of " + food1 + " and " + food2 + " is " + total_sum
+    return result_string
+print(total_price("beef", "cheese"))
