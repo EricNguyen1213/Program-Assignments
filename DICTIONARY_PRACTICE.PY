@@ -59,4 +59,4 @@ print(my_favorite)
 
 del shoe_inventory["Foamposite"]
 del shoe_inventory["Nike"]
-print(shoe_inventory)
+print(shoe_inventory) 
