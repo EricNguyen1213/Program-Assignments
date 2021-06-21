@@ -21,6 +21,3 @@ city_list[2] = "Brooklyn"
 city_list[7] = "Hollywood"
 city_list[5] = "Tampa"
 print(city_list)
-
-
-
