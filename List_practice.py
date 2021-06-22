@@ -42,3 +42,22 @@ del US_cities[5]
 US_cities.pop(14)
 US_cities.remove("Brooklyn")
 print(US_cities)
+
+# Lab 4 Step 8-9
+def nameEveryCity():
+    for city in US_cities:
+        print(city)
+
+def nameEveryCityAgain():
+    i = 0
+    while i < len(US_cities):
+        print(US_cities[0])
+        i += 1
+
+def nameLongerCity():
+    for i in range(len(US_cities)-1):
+        if len(US_cities[i]) > len(US_cities[i-1]):
+            print(US_cities[i])
+nameLongerCity()
+
+# Step 10
