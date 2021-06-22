@@ -1,3 +1,5 @@
+from random import randrange
+
 # Step 1
 empty_list = []
 
@@ -61,3 +63,21 @@ def nameLongerCity():
 nameLongerCity()
 
 # Step 10
+def checkCityInFront():
+    j = len(US_cities)-1
+    for i in range(j):
+        if len(US_cities[i]) > len(US_cities[i+1]):
+            US_cities.append(US_cities[i+1])
+            US_cities.pop(i+1)
+            j -= 1
+    print(US_cities)
+checkCityInFront()
+
+def sequenceOfWordsGen():
+    sentence = ""
+    for i in range(randrange(len(random_word_list)-1)):
+        temp = random_word_list[len(random_word_list)-1]+ ""
+        sentence += temp
+    return sentence
+print(sequenceOfWordsGen())
+
