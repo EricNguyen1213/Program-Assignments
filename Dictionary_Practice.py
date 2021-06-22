@@ -126,3 +126,17 @@ def restock_or_clearance(operation, selected, scale):
     else if operation == "divide" or operation == "/":
         clearance_sale(selected, scale)
 
+print(restock_or_clearance("*", "Yeezy", 3))
+
+def operate_on_my_favs_to_gen_nums(operator, selected1, selected2):
+    result = 0
+    if operator == "%" and operator == "module":
+        result = len(my_favorite[selected1]) % len(my_favorite[selected2])
+        return result
+    elif operator == "//" and operator == "floor division":
+        result = len(my_favorite[selected1]) // len(my_favorite[selected2])
+        return result
+    elif operator == "**" and operator == "exponential":
+        result = len(my_favorite[selected1]) // len(my_favorite[selected2])
+        return result
+
